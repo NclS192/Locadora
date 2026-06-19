@@ -4,7 +4,7 @@
     use PDO; 
     
     class conexao {
-        private static $dbNome = 'locacao';
+        private static $dbNome = 'locadora';
         private static $dbHost = 'localhost';
         private static $dbUsuario = 'root';
         private static $dbSenha = '';
