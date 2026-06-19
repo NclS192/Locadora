@@ -1,28 +1,25 @@
 <?php
     namespace MODEL;
 
-    class Agricultor{
+    class Locacao{
         private ?int $id;
-        private ?string $nome;
-        private ?string $cidade;
-        private ?string $bairro;
-        private ?int $idade;
+        private ?string $cliente;
+        private ?int $data_locacao;
+        private ?int $data_devolucao;
 
         public function __construct(){
            
         }
 
         public function getId(){return $this->id;}
-        public function getNome(){return $this->nome;}
-        public function getCidade(){return $this->cidade;}
-        public function getBairro(){return $this->bairro;}
-        public function getIdade(){return $this->idade;}
+        public function getCliente(){return $this->cliente;}
+        public function getDataLocacao(){return $this->data_locacao;}
+        public function getDataDevolucao(){return $this->data_devolucao;}
 
         public function setId(int $id){$this->id = $id;}
-        public function setNome(string $nome){$this->nome = $nome;}
-        public function setCidade(string $cidade){$this->cidade = $cidade;}
-        public function setBairro(string $bairro){$this->bairro = $bairro;}
-        public function setIdade(int $idade){$this->idade = $idade;}
+        public function setCliente(string $cliente){$this->cliente = $cliente;}
+        public function setDataLocacao(int $data_locacao){$this->data_locacao = $data_locacao;}
+        public function setDataDevolucao(int $data_devolucao){$this->data_devolucao = $data_devolucao;}
 
 
     }

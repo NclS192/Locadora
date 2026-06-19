@@ -1,28 +1,25 @@
 <?php
     namespace MODEL;
 
-    class Agricultor{
+    class ItensLocacao{
         private ?int $id;
-        private ?string $nome;
-        private ?string $cidade;
-        private ?string $bairro;
-        private ?int $idade;
+        private ?string $locacao;
+        private ?string $filme;
+        private ?int $quantidade;
 
         public function __construct(){
            
         }
 
         public function getId(){return $this->id;}
-        public function getNome(){return $this->nome;}
-        public function getCidade(){return $this->cidade;}
-        public function getBairro(){return $this->bairro;}
-        public function getIdade(){return $this->idade;}
+        public function getLocacao(){return $this->locacao;}
+        public function getFilme(){return $this->filme;}
+        public function getQuantidade(){return $this->quantidade;}
 
         public function setId(int $id){$this->id = $id;}
-        public function setNome(string $nome){$this->nome = $nome;}
-        public function setCidade(string $cidade){$this->cidade = $cidade;}
-        public function setBairro(string $bairro){$this->bairro = $bairro;}
-        public function setIdade(int $idade){$this->idade = $idade;}
+        public function setLocacao(string $locacao){$this->locacao = $locacao;}
+        public function setFilme(string $filme){$this->filme = $filme;}
+        public function setQuantidade(int $quantidade){$this->quantidade = $quantidade;}
 
 
     }
