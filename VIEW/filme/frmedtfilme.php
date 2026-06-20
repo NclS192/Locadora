@@ -1,13 +1,13 @@
 <?php
 $id = $_GET['id'];
 
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/cliente.php';
-include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/cliente.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/filme.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/filme.php';
 
 use DAL\Cliente;
 
-$dalCliente = new DAL\Cliente();
-$cliente = $dalCliente->SelectById($id);
+$dalFilme = new DAL\Filme();
+$filme = $dalFilme->SelectById($id);
 ?>
 
 <!DOCTYPE html>
@@ -31,24 +31,28 @@ $cliente = $dalCliente->SelectById($id);
 
 <body>
     <div class="container center grey darken-2 white-text">
-        <h3>Editar Cliente</h3>
+        <h3>Editar Filme</h3>
         <div class="row grey lighten-2 black-text">
-            <form action="opedtcliente.php" method="post" class="row">
+            <form action="opedtfilme.php" method="post" class="row">
                 <div class="input-field">
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
                 </br>
                 <div class="input-field">
-                    <input type="text" name="nome" id="nome" value="<?php echo $cliente->getNome(); ?>" required>
-                    <label for="nome">Nome</label>
+                    <input type="text" name="titulo" id="titulo" value="<?php echo $filme->getTitulo(); ?>" required>
+                    <label for="titulo">Título</label>
                 </div>
                 <div class="input-field">
-                    <input type="text" name="cpf" id="cpf" value="<?php echo $cliente->getCpf(); ?>" required>
-                    <label for="cpf">CPF</label>
+                    <input type="text" name="lancamento" id="lancamento" value="<?php echo $filme->getLancamento(); ?>" required>
+                    <label for="lancamento">Lançamento</label>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="genero" id="genero" value="<?php echo $filme->getGenero(); ?>" required>
+                    <label for="genero">Gênero</label>
                 </div>
                 <div class="input-field ">
-                    <input type="text" name="telefone" id="telefone" value="<?php echo $cliente->getTelefone(); ?>" required>
-                    <label for="telefone">Telefone</label>
+                    <input type="text" name="estoque" id="estoque" value="<?php echo $filme->getEstoque(); ?>" required>
+                    <label for="estoque">Estoque</label>
                 </div>
                 <button class="btn waves-effect waves-light" type="submit">Salvar</button>
             </form>

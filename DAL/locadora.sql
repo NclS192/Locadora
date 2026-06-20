@@ -46,7 +46,7 @@ CREATE TABLE `filmes` (
   `id` int(11) NOT NULL,
   `titulo` varchar(150) NOT NULL,
   `genero` varchar(50) NOT NULL,
-  `lancamento` int(11) NOT NULL,
+  `lancamento` int NOT NULL,
   `estoque` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

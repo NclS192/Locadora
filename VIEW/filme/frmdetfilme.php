@@ -1,14 +1,14 @@
 <?php
 $id = $_GET['id'];
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/DAL/cliente.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/MODEL/cliente.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/DAL/filme.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/MODEL/filme.php";
 
-use DAL\Cliente;
+use DAL\Filme;
 
 
-$dalCliente = new DAL\Cliente();
-$cliente = $dalCliente->SelectById($id);
+$dalFilme = new DAL\Filme();
+$filme = $dalFilme->SelectById($id);
 
 ?>
 
@@ -29,32 +29,35 @@ $cliente = $dalCliente->SelectById($id);
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes de Cliente</title>
+    <title>Detalhes de Filme</title>
 </head>
 
 <body class="teal lighten-4">
     <div class="container center grey darken-2 white-text">
-        <h3>Informações de Cliente</h3>
+        <h3>Informações de Filme</h3>
 
         <div class="row grey lighten-2 black-text">
-            <form action="opedtcliente.php" method="post" class="row">
+            <form action="opedtfilme.php" method="post" class="row">
                 <div class="input-field col s1">
-                    <label for="id" class="black-text bold">ID: <?php echo $cliente->getID() ?>
+                    <label for="id" class="black-text bold">ID: <?php echo $filme->getID() ?>
                     </label>
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
 
                 <div class="input-field col s2">
-                    <label for="nomelabel" class="black-text bold">Nome: <?php echo $cliente->getNome() ?> </label>
+                    <label for="titulolabel" class="black-text bold">Título: <?php echo $filme->getTitulo() ?> </label>
                 </div>
                 <div class="input-field col s3">
-                    <label for="cpflabel" class="black-text bold">CPF: <?php echo $cliente->getCpf() ?> </label>
+                    <label for="lancamentolabel" class="black-text bold">Lançamento: <?php echo $filme->getLancamento() ?> </label>
                 </div>
-                <div class="input-field col s4">
-                    <label for="telefonelabel" class="black-text bold">Telefone: <?php echo $cliente->getTelefone() ?> </label>
+                <div class="input-field col s5">
+                    <label for="estoquelabel" class="black-text bold">Estoque: <?php echo $filme->getEstoque() ?> </label>
+                </div>
+                <div class="input-field col s6">
+                    <label for="generolabel" class="black-text bold">Gênero: <?php echo $filme->getGenero() ?> </label>
                 </div>
                 <a class="waves-effect waves-light blue btn"
-                    onclick="JavaScript:location.href='lstcliente.php'">
+                    onclick="JavaScript:location.href='lstfilme.php'">
                     <i class="material-icons right">arrow_back</i>Voltar
                 </a>
         </div>
