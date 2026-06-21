@@ -1,6 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/locacao.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/locacao.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
 
 $dalLocacao = new DAL\Locacao();
 
@@ -25,7 +26,7 @@ $dalLocacao = new DAL\Locacao();
     <title>Locações</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h1 class="center-align">Lista de Locações</h1>
         <div class="row grey lighten-2 black-text">

@@ -1,6 +1,7 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/filme.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
 
 $dalFilme = new DAL\Filme();
 
@@ -25,7 +26,7 @@ $dalFilme = new DAL\Filme();
     <title>Filmes</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h1 class="center-align">Lista de Filmes</h1>
         <div class="row grey lighten-2 black-text">
