@@ -50,6 +50,10 @@ $cliente = $dalCliente->SelectById($id);
                     <input type="text" name="telefone" id="telefone" value="<?php echo $cliente->getTelefone(); ?>" required>
                     <label for="telefone">Telefone</label>
                 </div>
+                <a class="waves-effect waves-light blue btn"
+                    onclick="JavaScript:location.href='lstcliente.php'">
+                    <i class="material-icons right">arrow_back</i>Voltar
+                </a>
                 <button class="btn waves-effect waves-light" type="submit">Salvar</button>
             </form>
         </div>

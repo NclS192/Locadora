@@ -46,7 +46,7 @@ $locacao = $dalLocacao->SelectById($id);
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
                 </br>
-                 <div class="input-field ">
+                <div class="input-field ">
                     <select id="cliente" name="cliente">
                         <option value="" disabled selected>Clientes</option>
                         <?php foreach ($lstcliente as $cliente) { ?>
@@ -76,6 +76,10 @@ $locacao = $dalLocacao->SelectById($id);
                     <input type="date" name="data_devolucao" id="data_devolucao" value="<?php echo $locacao->getDataDevolucao()->format('d/m/y'); ?>" required>
                     <label for="data_devolucao">Data de Devolução</label>
                 </div>
+                <a class="waves-effect waves-light blue btn"
+                    onclick="JavaScript:location.href='lstlocacao.php'">
+                    <i class="material-icons right">arrow_back</i>Voltar
+                </a>
                 <button class="btn waves-effect waves-light" type="submit">Salvar</button>
             </form>
         </div>

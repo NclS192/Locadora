@@ -54,6 +54,10 @@ $filme = $dalFilme->SelectById($id);
                     <input type="text" name="estoque" id="estoque" value="<?php echo $filme->getEstoque(); ?>" required>
                     <label for="estoque">Estoque</label>
                 </div>
+                <a class="waves-effect waves-light blue btn"
+                    onclick="JavaScript:location.href='lstfilme.php'">
+                    <i class="material-icons right">arrow_back</i>Voltar
+                </a>
                 <button class="btn waves-effect waves-light" type="submit">Salvar</button>
             </form>
         </div>
