@@ -26,6 +26,26 @@ USE `locadora`;
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `login` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `login`, `senha`) VALUES
+(1, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `cliente`
 --
 
@@ -93,6 +113,12 @@ INSERT INTO `locacoes` (`id`, `cliente`, `filme`, `data_locacao`, `data_devoluca
 --
 
 --
+-- Índices de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `cliente`
 --
 ALTER TABLE `cliente`
@@ -115,6 +141,13 @@ ALTER TABLE `locacoes`
 --
 -- AUTO_INCREMENT para tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
