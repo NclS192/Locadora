@@ -7,6 +7,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/cliente.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/cliente.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalCLiente = new DAL\Cliente();
 $lstcliente = $dalCLiente->Select();
@@ -37,7 +39,7 @@ $locacao = $dalLocacao->SelectById($id);
     <title>Editar Locação</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h3>Editar Locação</h3>
         <div class="row grey lighten-2 black-text">

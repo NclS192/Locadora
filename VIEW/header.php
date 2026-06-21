@@ -1,6 +1,6 @@
 <header>
     <nav class=" brown darken-4" style="border:2px solid black">
-        <a href="/Locadora/VIEW/home.php" class="brand-logo right"><img src="/Locadora/IMAGES/logo.jpg" height="63" width="180" class="materialboxed"></a>
+        <a href="/Locadora/VIEW/home.php" class="brand-logo right"><img src="/Locadora/IMAGES/logo.jpg" height="63" width="180" class="circle"></a>
             <ul id="navbar" class="left hide-on-med-and-down">
                 <li><a href="/Locadora/VIEW/home.php">Home</a></li>
                 <li><a href="/Locadora/VIEW/cliente/lstcliente.php">Clientes</a></li>

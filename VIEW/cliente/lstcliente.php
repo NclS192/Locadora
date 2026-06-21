@@ -2,6 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/cliente.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/cliente.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalCliente = new DAL\Cliente();
 

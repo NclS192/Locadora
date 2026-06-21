@@ -3,8 +3,9 @@ $id = $_GET['id'];
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/cliente.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/cliente.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
-use DAL\Cliente;
 
 $dalCliente = new DAL\Cliente();
 $cliente = $dalCliente->SelectById($id);
@@ -29,7 +30,7 @@ $cliente = $dalCliente->SelectById($id);
     <title>Editar Cliente</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h3>Editar Cliente</h3>
         <div class="row grey lighten-2 black-text">

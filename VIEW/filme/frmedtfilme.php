@@ -3,8 +3,8 @@ $id = $_GET['id'];
 
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/filme.php';
-
-use DAL\Cliente;
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalFilme = new DAL\Filme();
 $filme = $dalFilme->SelectById($id);
@@ -29,7 +29,7 @@ $filme = $dalFilme->SelectById($id);
     <title>Editar Cliente</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h3>Editar Filme</h3>
         <div class="row grey lighten-2 black-text">

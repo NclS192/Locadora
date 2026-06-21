@@ -54,6 +54,12 @@
             </div>
 
         </div>
+    </div>
+    <?php
+    include_once __DIR__ . "/footer.php";
+    ?>
+    </div>
 </body>
+
 
 </html>

@@ -2,6 +2,8 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/DAL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/MODEL/filme.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
+
 
 $dalFilme = new DAL\Filme();
 

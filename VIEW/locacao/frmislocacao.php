@@ -1,3 +1,8 @@
+<?php
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +21,7 @@
     <title>Inserir Locação</title>
 </head>
 
-<body>
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h3>Inserir Locação</h3>
         <div class="row grey lighten-2 black-text">

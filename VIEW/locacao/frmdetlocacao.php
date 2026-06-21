@@ -3,6 +3,9 @@ $id = $_GET['id'];
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/DAL/locacao.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/MODEL/locacao.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
+
 
 $dalLocacao = new DAL\Locacao();
 $locacao = $dalLocacao->SelectById($id);
@@ -28,7 +31,7 @@ $locacao = $dalLocacao->SelectById($id);
     <title>Detalhes da Locação</title>
 </head>
 
-<body class="teal lighten-4">
+<body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h3>Informações da Locação</h3>
 
