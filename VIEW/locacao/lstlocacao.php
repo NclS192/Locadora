@@ -32,8 +32,9 @@ $dalLocacao = new DAL\Locacao();
             <table class="striped responsive-table hover: ">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Cliente</th>
+                        <th>ID Locação</th>
+                        <th>Nome Cliente</th>
+                        <th>Titulo Filme</th>
                         <th>Data de Locação</th>
                         <th>Data de Devolução</th>
                         <th> <a class="btn-floating btn-small waves-effect waves-light green">
@@ -47,9 +48,10 @@ $dalLocacao = new DAL\Locacao();
                     <?php foreach ($dalLocacao->Select() as $locacao) { ?>
                         <tr>
                             <td><?php echo $locacao->getId(); ?></td>
-                            <td><?php echo $locacao->getCliente(); ?></td>
-                            <td><?php echo $locacao->getDataLocacao(); ?></td>
-                            <td><?php echo $locacao->getDataDevolucao(); ?></td>
+                            <td><?php echo $locacao->getNomeCliente(); ?></td>
+                            <td><?php echo $locacao->getTituloFilme(); ?></td>
+                            <td><?php echo $locacao->getDataLocacao()->format('d/m/Y'); ?> </td>
+                            <td><?php echo $locacao->getDataDevolucao()->format('d/m/Y'); ?> </td>
                             <td> <a class="btn-floating btn-small waves-effect waves-light green">
                                     <i class="material-icons"
                                         onclick="JavaScript:location.href='frmedtlocacao.php?id=<?php echo $locacao->getId(); ?>'">edit</i>

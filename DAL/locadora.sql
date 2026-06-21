@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19/06/2026 às 21:57
+-- Tempo de geração: 21/06/2026 às 02:55
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -32,9 +32,17 @@ USE `locadora`;
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
-  `cpf` int(11) NOT NULL,
-  `telefone` int(11) NOT NULL
+  `cpf` int(20) NOT NULL,
+  `telefone` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`) VALUES
+(1, 'João Silva', 1111111222, 1899999111),
+(2, 'Maria Souza', 222222222, 1899991111);
 
 -- --------------------------------------------------------
 
@@ -46,22 +54,18 @@ CREATE TABLE `filmes` (
   `id` int(11) NOT NULL,
   `titulo` varchar(150) NOT NULL,
   `genero` varchar(50) NOT NULL,
-  `lancamento` int NOT NULL,
+  `lancamento` int(11) NOT NULL,
   `estoque` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estrutura para tabela `itenslocacao`
+-- Despejando dados para a tabela `filmes`
 --
 
-CREATE TABLE `itenslocacao` (
-  `id` int(11) NOT NULL,
-  `locacao` int(11) NOT NULL,
-  `filme` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `filmes` (`id`, `titulo`, `genero`, `lancamento`, `estoque`) VALUES
+(1, 'Matrix', 'Ficção Científica', 1999, 5),
+(2, 'Titanic', 'Romance', 1997, 3),
+(3, 'Vingadores Ultimato', 'Ação', 2019, 4);
 
 -- --------------------------------------------------------
 
@@ -72,9 +76,17 @@ CREATE TABLE `itenslocacao` (
 CREATE TABLE `locacoes` (
   `id` int(11) NOT NULL,
   `cliente` int(11) NOT NULL,
+  `filme` int(11) NOT NULL,
   `data_locacao` date NOT NULL,
   `data_devolucao` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `locacoes`
+--
+
+INSERT INTO `locacoes` (`id`, `cliente`, `filme`, `data_locacao`, `data_devolucao`) VALUES
+(1, 1, 1, '2026-06-01', '2026-06-11');
 
 --
 -- Índices para tabelas despejadas
@@ -93,19 +105,12 @@ ALTER TABLE `filmes`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `itenslocacao`
---
-ALTER TABLE `itenslocacao`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `locacao_locacoes` (`locacao`),
-  ADD KEY `locacao_filme` (`filme`);
-
---
 -- Índices de tabela `locacoes`
 --
 ALTER TABLE `locacoes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `locacoes_cliente` (`cliente`) USING BTREE;
+  ADD KEY `locacoes_cliente` (`cliente`) USING BTREE,
+  ADD KEY `locacao_filmes` (`filme`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -115,42 +120,30 @@ ALTER TABLE `locacoes`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `filmes`
 --
 ALTER TABLE `filmes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `itenslocacao`
---
-ALTER TABLE `itenslocacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `locacoes`
 --
 ALTER TABLE `locacoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para tabelas despejadas
 --
 
 --
--- Restrições para tabelas `itenslocacao`
---
-ALTER TABLE `itenslocacao`
-  ADD CONSTRAINT `locacao_filme` FOREIGN KEY (`filme`) REFERENCES `filmes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `locacao_locacoes` FOREIGN KEY (`locacao`) REFERENCES `locacoes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Restrições para tabelas `locacoes`
 --
 ALTER TABLE `locacoes`
-  ADD CONSTRAINT `locacao_cliente` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `locacao_cliente` FOREIGN KEY (`cliente`) REFERENCES `cliente` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `locacao_filmes` FOREIGN KEY (`filme`) REFERENCES `filmes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
