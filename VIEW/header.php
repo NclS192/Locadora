@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['login']))
+    header("Location: /Locadora/view/index.php");
+?>
+
 <header>
     <nav class=" brown darken-4" style="border:2px solid black">
         <a href="/Locadora/VIEW/home.php" class="brand-logo right"><img src="/Locadora/IMAGES/logo.jpg" height="63" width="180" class="circle"></a>
