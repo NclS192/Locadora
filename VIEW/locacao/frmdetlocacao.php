@@ -51,11 +51,11 @@ $locacao = $dalLocacao->SelectById($id);
                     </label>
                 </div>
                 <div class="input-field col s2">
-                    <label for="locacao" class="black-text bold">Locação: <?php echo $locacao->getDataLocacao()->format('d/m/y') ?>
+                    <label for="locacao" class="black-text bold">Locação: <?php echo $locacao->getDataLocacao()->format('Y-m-d') ?>
                     </label>
                 </div>
                 <div class="input-field col s2">
-                    <label for="devolucao" class="black-text bold">Devolução: <?php echo $locacao->getDataDevolucao()->format('d/m/y') ?>
+                    <label for="devolucao" class="black-text bold">Devolução: <?php echo $locacao->getDataDevolucao()->format('Y-m-d') ?>
                     </label>
                 </div>
                 <a class="waves-effect waves-light blue btn"

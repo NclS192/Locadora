@@ -52,8 +52,8 @@ $dalLocacao = new DAL\Locacao();
                             <td><?php echo $locacao->getId(); ?></td>
                             <td><?php echo $locacao->getNomeCliente(); ?></td>
                             <td><?php echo $locacao->getTituloFilme(); ?></td>
-                            <td><?php echo $locacao->getDataLocacao()->format('d/m/Y'); ?> </td>
-                            <td><?php echo $locacao->getDataDevolucao()->format('d/m/Y'); ?> </td>
+                            <td><?php echo $locacao->getDataLocacao()->format('Y-m-d'); ?> </td>
+                            <td><?php echo $locacao->getDataDevolucao()->format('Y-m-d'); ?> </td>
                             <td> <a class="btn-floating btn-small waves-effect waves-light green">
                                     <i class="material-icons"
                                         onclick="JavaScript:location.href='frmedtlocacao.php?id=<?php echo $locacao->getId(); ?>'">edit</i>

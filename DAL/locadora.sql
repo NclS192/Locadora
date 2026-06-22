@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/06/2026 às 02:55
+-- Tempo de geração: 22/06/2026 às 01:30
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -22,26 +22,6 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `locadora` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `locadora`;
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `usuario`
---
-
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario` (
-  `id` int(11) NOT NULL,
-  `login` varchar(10) NOT NULL,
-  `senha` varchar(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `usuario`
---
-
-INSERT INTO `usuario` (`id`, `login`, `senha`) VALUES
-(1, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72');
 
 -- --------------------------------------------------------
 
@@ -106,17 +86,30 @@ CREATE TABLE `locacoes` (
 --
 
 INSERT INTO `locacoes` (`id`, `cliente`, `filme`, `data_locacao`, `data_devolucao`) VALUES
-(1, 1, 1, '2026-06-01', '2026-06-11');
+(2, 2, 1, '2026-06-16', '2026-06-19');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `login` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `login`, `senha`) VALUES
+(1, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72');
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices de tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `cliente`
@@ -139,15 +132,14 @@ ALTER TABLE `locacoes`
   ADD KEY `locacao_filmes` (`filme`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `usuario`
+-- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
@@ -165,6 +157,12 @@ ALTER TABLE `filmes`
 -- AUTO_INCREMENT de tabela `locacoes`
 --
 ALTER TABLE `locacoes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --

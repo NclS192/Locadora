@@ -71,8 +71,8 @@ class Locacao
         $query->execute(array(
             $locacao->getCliente(),
             $locacao->getFilme(),
-            $locacao->getDataLocacao()->format('d/m/y'),
-            $locacao->getDataDevolucao()->format('d/m/y')
+            $locacao->getDataLocacao()->format('Y-m-d'),
+            $locacao->getDataDevolucao()->format('Y-m-d')
         ));
         $con = Conexao::desconectar();
     }
@@ -85,8 +85,8 @@ class Locacao
         $query->execute(array(
             $locacao->getCliente(),
             $locacao->getFilme(),
-            $locacao->getDataLocacao()->format('d/m/y'),
-            $locacao->getDataDevolucao()->format('d/m/y'),
+            $locacao->getDataLocacao()->format('Y-m-d'),
+            $locacao->getDataDevolucao()->format('Y-m-d'),
             $locacao->getId()
         ));
         $con = Conexao::desconectar();

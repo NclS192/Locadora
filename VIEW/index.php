@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="brown darken-3">
     <div class="had-container">
 
         <div class="parallax-container logueo">
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Acessar</button>
+                                    <button class="btn waves-effect waves-light brown" type="submit" name="action">Acessar</button>
                                 </div>
                             </form>
                         </div>
@@ -60,9 +60,6 @@
             </div>
         </div>
     </div>
-
-
-    </div> <!-- fin del .container -->
 
     <footer class="page-footer grey darken-4" style="position: absolute; bottom: 0; left: 0; right: 0;">
         <div class="footer-copyright">

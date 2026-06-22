@@ -71,11 +71,11 @@ $locacao = $dalLocacao->SelectById($id);
                     <label for="filme">Filme</label>
                 </div>
                 <div class="input-field">
-                    <input type="date" name="data_locacao" id="data_locacao" value="<?php echo $locacao->getDataLocacao()->format('d/m/y'); ?>" required>
+                    <input type="date" name="data_locacao" id="data_locacao" value="<?php echo $locacao->getDataLocacao()->format('Y-m-d'); ?>" required>
                     <label for="data_locacao">Data de Locação</label>
                 </div>
                 <div class="input-field">
-                    <input type="date" name="data_devolucao" id="data_devolucao" value="<?php echo $locacao->getDataDevolucao()->format('d/m/y'); ?>" required>
+                    <input type="date" name="data_devolucao" id="data_devolucao" value="<?php echo $locacao->getDataDevolucao()->format('Y-m-d'); ?>" required>
                     <label for="data_devolucao">Data de Devolução</label>
                 </div>
                 <a class="waves-effect waves-light blue btn"
