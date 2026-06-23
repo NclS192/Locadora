@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalLocacao = new DAL\Locacao();
+$lstLocacao = $dalLocacao->Select();
 
 ?>
 
@@ -47,7 +48,7 @@ $dalLocacao = new DAL\Locacao();
                 </thead>
 
                 <tbody>
-                    <?php foreach ($dalLocacao->Select() as $locacao) { ?>
+                    <?php foreach ($lstLocacao as $locacao) { ?>
                         <tr>
                             <td><?php echo $locacao->getId(); ?></td>
                             <td><?php echo $locacao->getNomeCliente(); ?></td>

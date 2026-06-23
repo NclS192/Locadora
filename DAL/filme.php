@@ -45,6 +45,30 @@
             return $filme;
         }
 
+        public function SelectByTitulo(string $titulo)
+    {
+        $sql = "SELECT * FROM filmes WHERE titulo LIKE ?;";
+        $con = Conexao::conectar();
+        $query = $con->prepare($sql);
+        $query->execute(['%' . $titulo . '%']);
+        $registros = $query->fetchAll(\PDO::FETCH_ASSOC);
+        $con = Conexao::desconectar();
+
+        $lstFilme = [];
+        foreach ($registros as $linha) {
+            $filme = new \MODEL\Filme();
+            $filme->setId($linha['id']);
+            $filme->setTitulo($linha['titulo']);
+            $filme->setLancamento($linha['lancamento']);
+            $filme->setGenero($linha['genero']);
+            $filme->setSituacao($linha['situacao']);
+
+            $lstFilme[] = $filme;
+        }
+
+        return $lstFilme;
+    }
+
         public function Insert(\MODEL\Filme $filme){
             $sql = "INSERT INTO filmes (titulo, lancamento, genero, situacao) VALUES (?, ?, ?, ?);";
             $con = Conexao::conectar();

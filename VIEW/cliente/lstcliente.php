@@ -6,6 +6,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalCliente = new DAL\Cliente();
 
+if (isset($_GET['busca_nome']) && !empty($_GET['busca_nome'])) {
+    $termo = $_GET['busca_nome'];
+    $lstCliente = $dalCliente->SelectByNome($termo);
+} else {
+    $termo = "";
+    $lstCliente = $dalCliente->Select();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +38,19 @@ $dalCliente = new DAL\Cliente();
 <body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h1 class="center-align">Lista de Clientes</h1>
+
+        <div class="row center grey darken-2 white-text">
+            <form action="lstcliente.php" method="get">
+                <div class="input-field col s12">
+                    <input id="search" type="search" name="busca_nome" class="col s6">
+                    <label for="icon_prefix">Filtrar por nome...</label>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Filtrar
+                        <i class="material-icons right">search</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <div class="row grey lighten-2 black-text">
             <table class="striped responsive-table hover: ">
                 <thead>
@@ -46,7 +67,7 @@ $dalCliente = new DAL\Cliente();
                 </thead>
 
                 <tbody>
-                    <?php foreach ($dalCliente->Select() as $cliente) { ?>
+                    <?php foreach ($lstCliente as $cliente) { ?>
                         <tr>
                             <td><?php echo $cliente->getId(); ?></td>
                             <td><?php echo $cliente->getNome(); ?></td>

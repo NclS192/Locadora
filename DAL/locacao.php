@@ -32,11 +32,11 @@ class Locacao
             $locacao->setNomeCliente((string)$linha['nome_cliente']);
             $locacao->setTituloFilme((string)$linha['titulo_filme']);
             if (!empty($linha['data_locacao'])) {
-                    $locacao->setDataLocacao(new \DateTime($linha['data_locacao']));
-                }
+                $locacao->setDataLocacao(new \DateTime($linha['data_locacao']));
+            }
             if (!empty($linha['data_devolucao'])) {
-                    $locacao->setDataDevolucao(new \DateTime($linha['data_devolucao']));
-                }
+                $locacao->setDataDevolucao(new \DateTime($linha['data_devolucao']));
+            }
             $locacoes[] = $locacao;
         }
         return $locacoes;
@@ -57,7 +57,7 @@ class Locacao
         $locacao->setNomeCliente((string)$linha['cliente']);
         $locacao->setFilme($linha['filme']);
         $locacao->setTituloFilme((string)$linha['filme']);
-        $locacao->setDataLocacao(new \DateTime($linha['data_locacao'])); 
+        $locacao->setDataLocacao(new \DateTime($linha['data_locacao']));
         $locacao->setDataDevolucao(new \DateTime($linha['data_devolucao']));
 
         return $locacao;

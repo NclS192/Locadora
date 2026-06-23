@@ -7,6 +7,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 $dalFilme = new DAL\Filme();
 
+if (isset($_GET['busca_nome']) && !empty($_GET['busca_nome'])) {
+    $termo = $_GET['busca_nome'];
+    $lstFilme = $dalFilme->SelectByTitulo($termo);
+} else {
+    $termo = "";
+    $lstFilme = $dalFilme->Select();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -31,6 +39,19 @@ $dalFilme = new DAL\Filme();
 <body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
         <h1 class="center-align">Lista de Filmes</h1>
+
+        <div class="row center grey darken-2 white-text">
+            <form action="lstfilme.php" method="get">
+                <div class="input-field col s12">
+                    <input id="search" type="search" name="busca_nome" class="col s6">
+                    <label for="icon_prefix">Filtrar por nome...</label>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Filtrar
+                        <i class="material-icons right">search</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <div class="row grey lighten-2 black-text">
             <table class="striped responsive-table hover: ">
                 <thead>
@@ -48,7 +69,7 @@ $dalFilme = new DAL\Filme();
                 </thead>
 
                 <tbody>
-                    <?php foreach ($dalFilme->Select() as $filme) { ?>
+                    <?php foreach ($lstFilme as $filme) { ?>
                         <tr>
                             <td><?php echo $filme->getId(); ?></td>
                             <td><?php echo $filme->getTitulo(); ?></td>
