@@ -29,11 +29,12 @@ USE `locadora`;
 -- Estrutura para tabela `cliente`
 --
 
+DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
-  `cpf` int(20) NOT NULL,
-  `telefone` int(20) NOT NULL
+  `cpf` varchar(11) NOT NULL,
+  `telefone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -115,7 +116,8 @@ INSERT INTO `usuario` (`id`, `login`, `senha`) VALUES
 -- Índices de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `cpf` (`cpf`);
 
 --
 -- Índices de tabela `filmes`

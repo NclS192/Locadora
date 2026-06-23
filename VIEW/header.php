@@ -12,6 +12,7 @@ if (!isset($_SESSION['login']))
                 <li><a href="/Locadora/VIEW/cliente/lstcliente.php">Clientes</a></li>
                 <li><a href="/Locadora/VIEW/filme/lstfilme.php">Filmes</a></li>
                 <li><a href="/Locadora/VIEW/locacao/lstlocacao.php">Locação</a></li>
+                <li><a href="/Locadora/VIEW/usuario/lstusuario.php">Usuário</a></li>
                 <li><a href="/Locadora/VIEW/logout.php">Logout</a></li>
             </ul>
     </nav>

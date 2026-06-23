@@ -62,8 +62,8 @@ $locacao = $dalLocacao->SelectById($id);
                     onclick="JavaScript:location.href='lstlocacao.php'">
                     <i class="material-icons right">arrow_back</i>Voltar
                 </a>
+            </form>
         </div>
-        </form>
 
 
     </div>

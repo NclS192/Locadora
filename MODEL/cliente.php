@@ -4,8 +4,8 @@
     class Cliente{
         private ?int $id;
         private ?string $nome;
-        private ?int $cpf;
-        private ?int $telefone;
+        private ?string $cpf;
+        private ?string $telefone;
 
         public function __construct(){
            
@@ -19,8 +19,8 @@
 
         public function setId(int $id){$this->id = $id;}
         public function setNome(string $nome){$this->nome = $nome;}
-        public function setCpf(int $cpf){$this->cpf = $cpf;}
-        public function setTelefone(int $telefone){$this->telefone = $telefone;}
+        public function setCpf(string $cpf){$this->cpf = $cpf;}
+        public function setTelefone(string $telefone){$this->telefone = $telefone;}
 
     }
 ?>

@@ -1,21 +1,25 @@
 <?php
 $id = $_GET['id'];
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/DAL/filme.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/MODEL/filme.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/DAL/usuario.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/Locadora/MODEL/usuario.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
-$dalFilme = new DAL\Filme();
-$filme = $dalFilme->SelectById($id);
-
+$dalUsuario = new DAL\Usuario();
+$usuario = $dalUsuario->SelectById($id);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+
+    <!-- Inclusão do jQuery-->
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <!-- Inclusão do Plugin jQuery Validation-->
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -25,47 +29,31 @@ $filme = $dalFilme->SelectById($id);
     <!-- Usado para adicionar ícones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhes de Filme</title>
+    <title>Inserir Usuário</title>
 </head>
 
 <body class="brown darken-2">
     <div class="container center grey darken-2 white-text">
-        <h3>Informações de Filme</h3>
-
+        <h3>Inserir Usuário</h3>
         <div class="row grey lighten-2 black-text">
-            <form action="opedtfilme.php" method="post" class="row">
+            <form action="opedtcliente.php" method="post" class="row">
                 <div class="input-field col s1">
-                    <label for="id" class="black-text bold">ID: <?php echo $filme->getID() ?>
+                    <label for="id" class="black-text bold">ID: <?php echo $usuario->getID() ?>
                     </label>
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
 
                 <div class="input-field col s2">
-                    <label for="titulolabel" class="black-text bold">Título: <?php echo $filme->getTitulo() ?> </label>
-                </div>
-                <div class="input-field col s3">
-                    <label for="lancamentolabel" class="black-text bold">Lançamento: <?php echo $filme->getLancamento() ?> </label>
-                </div>
-                <div class="input-field col s5">
-                    <label for="estoquelabel" class="black-text bold">Estoque: <?php echo $filme->getEstoque() ?> </label>
-                </div>
-                <div class="input-field col s6">
-                    <label for="generolabel" class="black-text bold">Gênero: <?php echo $filme->getGenero() ?> </label>
+                    <label for="nomelabel" class="black-text bold">Nome: <?php echo $usuario->getLogin() ?> </label>
                 </div>
                 <a class="waves-effect waves-light blue btn"
-                    onclick="JavaScript:location.href='lstfilme.php'">
+                    onclick="JavaScript:location.href='lstusuario.php'">
                     <i class="material-icons right">arrow_back</i>Voltar
                 </a>
             </form>
         </div>
-
-
-    </div>
-    <br />
-
     </div>
 </body>
 
