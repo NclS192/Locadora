@@ -39,8 +39,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
                         <label for="genero">Gênero</label>
                     </div>
                     <div class="input-field">
-                        <input type="number" name="estoque" id="estoque" required>
-                        <label for="estoque">Estoque</label>
+                        <input type="text" name="situacao" id="situacao" required>
+                        <label for="situacao">Situação</label>
                     </div>
                     <a class="waves-effect waves-light blue btn"
                         onclick="JavaScript:location.href='lstfilme.php'">

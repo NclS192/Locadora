@@ -7,7 +7,7 @@ $filme->setId($_POST['id']);
 $filme->setTitulo($_POST['titulo']);
 $filme->setLancamento($_POST['lancamento']);
 $filme->setGenero($_POST['genero']);
-$filme->setEstoque($_POST['estoque']);
+$filme->setSituacao($_POST['estoque']);
 
 $dalFilme = new DAL\Filme();
 $dalFilme->Update($filme);

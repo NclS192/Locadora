@@ -21,7 +21,7 @@
                 $filme->setTitulo($linha['titulo']);
                 $filme->setLancamento($linha['lancamento']);
                 $filme->setGenero($linha['genero']);
-                $filme->setEstoque($linha['estoque']);
+                $filme->setSituacao($linha['situacao']);
                 $filmes[] = $filme;
             }
             return $filmes;
@@ -40,33 +40,33 @@
             $filme->setTitulo($linha['titulo']);
             $filme->setLancamento($linha['lancamento']);
             $filme->setGenero($linha['genero']);
-            $filme->setEstoque($linha['estoque']);
+            $filme->setSituacao($linha['situacao']);
 
             return $filme;
         }
 
         public function Insert(\MODEL\Filme $filme){
-            $sql = "INSERT INTO filmes (titulo, lancamento, genero, estoque) VALUES (?, ?, ?, ?);";
+            $sql = "INSERT INTO filmes (titulo, lancamento, genero, situacao) VALUES (?, ?, ?, ?);";
             $con = Conexao::conectar();
             $query = $con->prepare($sql);
             $query->execute(array(
                 $filme->getTitulo(),
                 $filme->getLancamento(),
                 $filme->getGenero(),
-                $filme->getEstoque()
+                $filme->getSituacao(),
             ));
             $con = Conexao::desconectar();
         }
 
         public function Update(\MODEL\Filme $filme){
-            $sql = "UPDATE filmes SET titulo = ?, lancamento = ?, genero = ?, estoque = ? WHERE id = ?;";
+            $sql = "UPDATE filmes SET titulo = ?, lancamento = ?, genero = ?, situacao = ? WHERE id = ?;";
             $con = Conexao::conectar();
             $query = $con->prepare($sql);
             $query->execute(array(
                 $filme->getTitulo(),
                 $filme->getLancamento(),
                 $filme->getGenero(),
-                $filme->getEstoque(),
+                $filme->getSituacao(),
                 $filme->getId()
             ));
             $con = Conexao::desconectar();

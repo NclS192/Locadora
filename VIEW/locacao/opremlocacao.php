@@ -12,9 +12,11 @@ $locacao = $dalLocacao->SelectById($id);
 $dalFilme = new DAL\Filme();
 $filme = $dalFilme->SelectById($locacao->getFilme());
 
-$filme->setEstoque($filme->getEstoque() + 1);
-$dalFilme->Update($filme);
-$dalLocacao->Delete($id);
+if ($filme->getSituacao() == 'I') {
+  $filme->setSituacao('D');
+  $dalFilme->Update($filme);
+  $dalLocacao->Delete($id);
+}
 
 
 header("Location: lstlocacao.php");

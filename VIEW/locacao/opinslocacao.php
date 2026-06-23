@@ -16,10 +16,9 @@ $filme = $dalFilme->SelectById($idFilme);
 
 $dalLocacao = new DAL\Locacao();
 
-if ($filme->getEstoque() >= 1){
-        $estoque = $filme->getEstoque() - 1; 
+if ($filme->getSituacao() == 'D'){
 
-        $filme->setEstoque($estoque); 
+        $filme->setSituacao('I'); 
         $dalFilme->Update($filme); 
 
         $dalLocacao->Insert($locacao); 

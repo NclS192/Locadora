@@ -39,7 +39,7 @@ $dalFilme = new DAL\Filme();
                         <th>Título</th>
                         <th>Lançamento</th>
                         <th>Gênero</th>
-                        <th>Estoque</th>
+                        <th>Situação</th>
                         <th> <a class="btn-floating btn-small waves-effect waves-light green">
                                 <i class="material-icons"
                                     onclick="JavaScript:location.href='frmisfilme.php'">add</i>
@@ -54,7 +54,7 @@ $dalFilme = new DAL\Filme();
                             <td><?php echo $filme->getTitulo(); ?></td>
                             <td><?php echo $filme->getLancamento(); ?></td>
                             <td><?php echo $filme->getGenero(); ?></td>
-                            <td><?php echo $filme->getEstoque(); ?></td>
+                            <td><?php echo $filme->getSituacao(); ?></td>
                             <td> <a class="btn-floating btn-small waves-effect waves-light green">
                                     <i class="material-icons"
                                         onclick="JavaScript:location.href='frmedtfilme.php?id=<?php echo $filme->getId(); ?>'">edit</i>

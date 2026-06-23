@@ -51,8 +51,8 @@ $filme = $dalFilme->SelectById($id);
                     <label for="genero">Gênero</label>
                 </div>
                 <div class="input-field ">
-                    <input type="text" name="estoque" id="estoque" value="<?php echo $filme->getEstoque(); ?>" required>
-                    <label for="estoque">Estoque</label>
+                    <input type="text" name="situacao" id="situacao" value="<?php echo $filme->getSituacao(); ?>" required>
+                    <label for="situacao">Situação</label>
                 </div>
                 <a class="waves-effect waves-light blue btn"
                     onclick="JavaScript:location.href='lstfilme.php'">

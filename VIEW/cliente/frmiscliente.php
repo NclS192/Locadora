@@ -53,7 +53,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
             </form>
         </div>
     </div>
-    <script src="validaFone.js"></script>
+    <script src="validafone.js"></script>
 </body>
 
 </html>

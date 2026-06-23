@@ -6,7 +6,7 @@
         private ?string $titulo;
         private ?string $genero;
         private ?int $lancamento;
-        private ?int $estoque;
+        private ?string $situacao;
 
         public function __construct(){
            
@@ -16,14 +16,12 @@
         public function getTitulo(){return $this->titulo;}
         public function getGenero(){return $this->genero;}
         public function getLancamento(){return $this->lancamento;}
-        public function getEstoque(){return $this->estoque;}
+        public function getSituacao(){return $this->situacao;}
 
         public function setId(int $id){$this->id = $id;}
         public function setTitulo(string $titulo){$this->titulo = $titulo;}
         public function setGenero(string $genero){$this->genero = $genero;}
         public function setLancamento(int $lancamento){$this->lancamento = $lancamento;}
-        public function setEstoque(int $estoque){$this->estoque = $estoque;}
-
-
+        public function setSituacao(string $situacao){$this->situacao = $situacao;}
     }
 ?>

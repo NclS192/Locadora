@@ -50,7 +50,7 @@ $filme = $dalFilme->SelectById($id);
                     <label for="lancamentolabel" class="black-text bold">Lançamento: <?php echo $filme->getLancamento() ?> </label>
                 </div>
                 <div class="input-field col s5">
-                    <label for="estoquelabel" class="black-text bold">Estoque: <?php echo $filme->getEstoque() ?> </label>
+                    <label for="situacaolabel" class="black-text bold">Situação: <?php echo $filme->getSituacao() ?> </label>
                 </div>
                 <div class="input-field col s6">
                     <label for="generolabel" class="black-text bold">Gênero: <?php echo $filme->getGenero() ?> </label>

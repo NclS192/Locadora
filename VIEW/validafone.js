@@ -1,4 +1,4 @@
-jQuery.validator.addMethod('celular', function (value, element) {
+jQuery.validator.addMethod('telefone', function (value, element) {
     value = value.replace("(","");
     value = value.replace(")", "");
     value = value.replace("-", "");
@@ -8,7 +8,7 @@ jQuery.validator.addMethod('celular', function (value, element) {
     } else if (value == '00000000000') {
         return (this.optional(element) || false);
     }
-    if (["00", "01", "02", "03", , "04", , "05", , "06", , "07", , "08", "09", "10"]
+    if (["00", "01", "02", "03", "04" , "05" , "06" , "07" , "08", "09", "10"]
     .indexOf(value.substring(0, 2)) != -1) {
         return (this.optional(element) || false);
     }
@@ -18,15 +18,15 @@ jQuery.validator.addMethod('celular', function (value, element) {
     if (["6", "7", "8", "9"].indexOf(value.substring(2, 3)) == -1) {
         return (this.optional(element) || false);
     }
-    return (this.optional(element) || true);
+    return this.optional(element) || true;
 }, 'Informe um número de telefone celular válido!');
 //Nosso formulário, pronto para ser validado
 $( "#formularioValidaTelefoneCelular" ).validate({
   debug: true,
   rules: {
-    telefone_celular: {
+    telefone: {
       required: true,
-                  celular: true,
+                  telefone: true,
                 }
   }
 });

@@ -7,7 +7,7 @@ $filme = new MODEL\Filme();
 $filme->setTitulo($_POST['titulo']);
 $filme->setLancamento($_POST['lancamento']);
 $filme->setGenero($_POST['genero']);
-$filme->setEstoque($_POST['estoque']);
+$filme->setSituacao($_POST['situacao']);
 
 $dalFilme = new DAL\Filme();
 $dalFilme->Insert($filme);
