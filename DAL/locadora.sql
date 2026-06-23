@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/06/2026 às 01:30
+-- Tempo de geração: 23/06/2026 às 08:24
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -29,7 +29,6 @@ USE `locadora`;
 -- Estrutura para tabela `cliente`
 --
 
-DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
@@ -42,8 +41,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id`, `nome`, `cpf`, `telefone`) VALUES
-(1, 'João Silva', 1111111222, 1899999111),
-(2, 'Maria Souza', 222222222, 1899991111);
+(1, 'João Silva', '39788506801', '1899999111'),
+(2, 'Maria Souza', '222222222', '1899991111');
 
 -- --------------------------------------------------------
 
@@ -56,17 +55,17 @@ CREATE TABLE `filmes` (
   `titulo` varchar(150) NOT NULL,
   `genero` varchar(50) NOT NULL,
   `lancamento` int(11) NOT NULL,
-  `estoque` int(11) NOT NULL
+  `situacao` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `filmes`
 --
 
-INSERT INTO `filmes` (`id`, `titulo`, `genero`, `lancamento`, `estoque`) VALUES
-(1, 'Matrix', 'Ficção Científica', 1999, 5),
-(2, 'Titanic', 'Romance', 1997, 3),
-(3, 'Vingadores Ultimato', 'Ação', 2019, 4);
+INSERT INTO `filmes` (`id`, `titulo`, `genero`, `lancamento`, `situacao`) VALUES
+(1, 'Matrix', 'Ficção Científica', 1999, 'I'),
+(2, 'Titanic', 'Romance', 1997, 'D'),
+(3, 'Vingadores Ultimato', 'Ação', 2019, 'D');
 
 -- --------------------------------------------------------
 
@@ -87,7 +86,8 @@ CREATE TABLE `locacoes` (
 --
 
 INSERT INTO `locacoes` (`id`, `cliente`, `filme`, `data_locacao`, `data_devolucao`) VALUES
-(2, 2, 1, '2026-06-16', '2026-06-19');
+(2, 2, 1, '2026-06-21', '2026-06-21'),
+(17, 1, 3, '2026-06-08', '2026-06-17');
 
 -- --------------------------------------------------------
 
@@ -147,25 +147,25 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT de tabela `filmes`
 --
 ALTER TABLE `filmes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `locacoes`
 --
 ALTER TABLE `locacoes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para tabelas despejadas

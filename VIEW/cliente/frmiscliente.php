@@ -8,11 +8,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
 
 <head>
 
-    <!-- Inclusão do jQuery-->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-    <!-- Inclusão do Plugin jQuery Validation-->
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
-
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
@@ -32,7 +27,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
         <h3>Inserir Cliente</h3>
         <div class="row grey lighten-2 black-text">
             </br>
-            <form id="formularioValidaTelefoneCelular" action="opinscliente.php" method="post">
+            <form id="valida" action="opinscliente.php" method="post">
                 <div class="input-field">
                     <input type="text" name="nome" id="nome" required>
                     <label for="nome">Nome</label>
@@ -51,9 +46,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
                 </a>
                 <button class="btn waves-effect waves-light" type="submit">Inserir</button>
             </form>
+            <script src="valida1.js"></script>
         </div>
     </div>
-    <script src="validafone.js"></script>
 </body>
 
 </html>

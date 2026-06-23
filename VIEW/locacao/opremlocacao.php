@@ -15,7 +15,6 @@ $filme = $dalFilme->SelectById($locacao->getFilme());
 if ($filme->getSituacao() == 'I') {
   $filme->setSituacao('D');
   $dalFilme->Update($filme);
-  $dalLocacao->Delete($id);
 }
 
 

@@ -38,7 +38,7 @@ $cliente = $dalCliente->SelectById($id);
     <div class="container center grey darken-2 white-text">
         <h3>Editar Cliente</h3>
         <div class="row grey lighten-2 black-text">
-            <form action="opedtcliente.php" method="post" class="row">
+            <form id="valida" action="opedtcliente.php" method="post" class="row">
                 <div class="input-field">
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
@@ -61,6 +61,7 @@ $cliente = $dalCliente->SelectById($id);
                 </a>
                 <button class="btn waves-effect waves-light" type="submit">Salvar</button>
             </form>
+            <script src="valida1.js"></script>
         </div>
     </div>
 </body>

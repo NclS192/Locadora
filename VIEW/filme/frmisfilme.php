@@ -26,7 +26,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
         <h3>Inserir Filme</h3>
         <div class="row grey lighten-2 black-text">
             </br>
-            <form action="opinsfilme.php" method="post">
+            <form id="valida2" action="opinsfilme.php" method="post">
                 <div class="input-field">
                     <input type="text" name="titulo" id="titulo" required>
                     <label for="titulo">Título</label>
@@ -48,6 +48,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/Locadora/VIEW/footer.php';
                     </a>
                     <button class="btn waves-effect waves-light" type="submit">Inserir</button>
             </form>
+            <script src="valida2.js"></script>
         </div>
 </body>
 
